@@ -11,7 +11,6 @@ import freechips.rocketchip.tile.{RocketTile, RocketTileParams}
 import freechips.rocketchip.util.HasCoreMonitorBundles
 import freechips.rocketchip.npu._
 import freechips.rocketchip.peek._
-import freechips.rocketchip.buckyball._
 
 case class RocketCrossingParams(
   crossingType: ClockCrossingType = SynchronousCrossing(),

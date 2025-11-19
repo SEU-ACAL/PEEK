@@ -25,7 +25,6 @@ import freechips.rocketchip.resources.{BigIntToProperty, IntToProperty, StringTo
 import freechips.rocketchip.util.BooleanToAugmentedBoolean
 import freechips.rocketchip.npu.BuildRoCCNpu
 import freechips.rocketchip.peek.BuildRoCCPEEK
-import freechips.rocketchip.buckyball.BuildRoCCBB
 //===== GuardianCouncil Function: Start ====//
 import freechips.rocketchip.guardiancouncil._
 case object EnableGuardianCouncilNodes extends Field[Boolean](false)

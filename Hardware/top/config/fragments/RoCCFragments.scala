@@ -6,11 +6,9 @@ import org.chipsalliance.cde.config.{Field, Parameters, Config}
 import freechips.rocketchip.tile._
 import freechips.rocketchip.diplomacy._
 import freechips.rocketchip.npu._
-import freechips.rocketchip.buckyball._
 import freechips.rocketchip.PEEK._
 import freechips.rocketchip.guardiancouncil._
 import gemmini._
-import buckyball._
 
 import chipyard.{TestSuitesKey, TestSuiteHelper}
 
@@ -62,16 +60,6 @@ class WithMultiRoCCGemmini[T <: Data : Arithmetic, U <: Data, V <: Data](
   }
 })
 
-class WithMultiRoCCBuckyBall(harts: Int*)
-  (buckyballConfig: BuckyBallConfig = BuckyBallConfigs.defaultConfig) extends Config((site, here, up) => {
-    case MultiRoCCKeyBB => up(MultiRoCCKeyBB, site) ++ harts.distinct.map { i =>
-    (i -> Seq((p: Parameters) => {
-      implicit val q = p
-      val buckyball = LazyModule(new BuckyBall(buckyballConfig))
-      buckyball
-    }))
-  }
-})
 
 class WithAccumulatorRoCC(op: OpcodeSet = OpcodeSet.custom1) extends Config((site, here, up) => {
   case BuildRoCC => up(BuildRoCC) ++ Seq((p: Parameters) => {
