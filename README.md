@@ -16,7 +16,7 @@ Dependencies Installation
 ```
 git clone https://github.com/ucb-bar/chipyard.git
 cd chipyard
-git checkout 1.13.0
+git checkout 1.13.1
 ./scripts/init-submodules-no-riscv-tools.sh
 ./scripts/build-toolchains.sh riscv-tools # for a normal risc-v toolchain 
 ```
@@ -39,13 +39,13 @@ $PEEK/Scripts/update_src.sh
 **Step 3.** Building hardware for PEEK:
 ```
 cd $PLATFORM/sims/verilator
-make config=RocketConfig
+make config=PEEKProConfig
 ```
 
 (**OUTPUT I**) After a few hours, a software simulator and the corresponding Verilog code will be generated:
 ```
-./simulator-chipyard-RocketConfig # Software Simulator
-./generated-src/chipyard.TestHarness.RocketConfig/chipyard.TestHarness.RocketConfig.top.v # Verilog code
+./simulator-chipyard-PEEKProConfig # Software Simulator
+./generated-src/chipyard.TestHarness.PEEKProConfig/chipyard.TestHarness.PEEKProConfig.top.v # Verilog code
 ```
 
 
